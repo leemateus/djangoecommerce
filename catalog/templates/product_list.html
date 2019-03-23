@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Listagem de Produtos | {{block.super}}
+{% endblock  %}
+
+{% block container %}
+
+{% load static %}
+
+<div class="page-header">
+  <h1>Produtos</h1>
+</div>
+<div class="row">
+  {% for produto in produtos %}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a href="#">
+        <img src="{% static '279713.jpeg' %}"/>
+      </a>
+      <div class="caption">
+        <h3>{{ produto.name }}</h3>
+        <p>O Moto G5S é o novo celular da Motorola com lançamento em agosto de 2017. O smartphone, que é uma edição especial, tem o corpo todo de metal e não possui bateria removível, ao contrário do Moto G5 que era feito de alumínio e plástico. A tela aumentou e agora tem 5,2 polegadas, com resolução Full HD.</p>
+        <p><a href="#" class="btn btn-success" role="button">Alugar</a> <a href="#" class="btn btn-default" role="button">Ficha Técnica</a></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock  %}
