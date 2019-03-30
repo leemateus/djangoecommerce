@@ -15,7 +15,7 @@
   {% for produto in produtos %}
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <a href="#">
+      <a href="{% url 'catalog_product' id=produto.id %}">
         <img src="{% static '279713.jpeg' %}"/>
       </a>
       <div class="caption">

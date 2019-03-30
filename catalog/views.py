@@ -15,3 +15,7 @@ def category(request, slug):
         'produto' : Product.objects.filter(category__id=slug),
     }
     return render(request, 'catalog/category.html', {'result' : result, 'produtos': produtos})
+
+def product(request, id):
+    product = Product.objects.get(id=id)
+    return render(request, 'catalog/product.html', {'product' : product})
