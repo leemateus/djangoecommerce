@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from .models import Product, Category
 
 def product_list(request):
