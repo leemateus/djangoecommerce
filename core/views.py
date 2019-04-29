@@ -4,10 +4,20 @@ from .forms import ContactForm
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm
+from django.views.generic import View, TemplateView
 
-def index(request):
+# def index(request):
+#
+#     return render(request, 'index.html', {})
 
-    return render(request, 'index.html', {})
+class indexView(View):
+    def get(self, request):
+        return render(request, 'index.html')
+
+    template_name = 'index.html'
+
+index = indexView.as_view()
+
 
 def contact(request):
     return render(request, 'contact.html', {})
